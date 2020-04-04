@@ -3,14 +3,14 @@ package pl.coderslab.controllers;
 
 public class Book {
 
-    private int id;
+    private long id;
     private String isbn;
     private String title;
     private String author;
     private String publisher;
     private String type;
 
-    public Book(int id, String isbn, String title, String author, String publisher, String type) {
+    public Book(long id, String isbn, String title, String author, String publisher, String type) {
         this.id = id;
         this.isbn = isbn;
         this.title = title;
@@ -19,11 +19,11 @@ public class Book {
         this.type = type;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
