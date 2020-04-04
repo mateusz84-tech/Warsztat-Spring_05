@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 @Service
 public class MemoryBookService {
@@ -28,18 +29,21 @@ public class MemoryBookService {
     }
 
     // metoda do pobrania książki po id
-    public Book getById(long id){
-        for(Book book : list){
-            if(book.getId() == id) {
-                return book;
-            }
-        }
-        throw new IllegalArgumentException("Brak id");
+    public Book getBookId(long id){
+//        for(Book book : list){
+//            if(book.getId() == id) {
+//                return book;
+//            }
+//        }
+        return list.stream()
+                .filter(s->s.getId() == id)
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("Brak id"));
     }
-    public void editList(){
+    public void editListBooks(){
 
     }
-    public void deleteBook(){
+    public void removeBookById(){
 
     }
 
