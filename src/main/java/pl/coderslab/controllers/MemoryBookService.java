@@ -57,13 +57,12 @@ public class MemoryBookService {
     }
 
     // metoda edytyjąca ksiażkę
-    public void editListBooks(){
+    public void editBooks(Book book){
 
     }
+
     // metoda usuwająca ksiażkę
-    public void removeBookById(){
+    public void removeBookById(long id){
 
     }
-
-
 }

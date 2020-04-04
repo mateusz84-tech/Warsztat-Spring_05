@@ -51,4 +51,11 @@ public class BookController {
         memoryBookService.addBook(book);
     }
 
+    @PutMapping("/editBook/{id}")
+    public void editBook(@PathVariable long id,
+                         @RequestBody Book book){
+
+    }
+
+    // Math.abs(random.nextLong()); - abs wartość bezwzględna
 }
