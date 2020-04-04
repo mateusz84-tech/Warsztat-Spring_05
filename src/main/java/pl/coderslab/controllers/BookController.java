@@ -3,6 +3,7 @@ package pl.coderslab.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,10 +22,11 @@ public class BookController {
         this.memoryBookService = memoryBookService;
     }
 
-    @GetMapping("/hello")
-    public String hello(){
-        return "{hello: World}";
-    }
+//    // do formatowania gdy nie ma Jacksona
+//    @GetMapping("/hello")
+//    public String hello(){
+//        return "{hello: World}";
+//    }
 
     @RequestMapping("/helloBook")
     public Book helloBook(){
@@ -37,6 +39,12 @@ public class BookController {
     public List<Book> showList(){
 
         return memoryBookService.getList();
+    }
+    // akcja wyświetlająca daną książkę po przekazanym id
+    @RequestMapping("/showBook/{id}")
+    public Book showBookById(@PathVariable long id){
+
+        return memoryBookService.getBookId(id);
     }
 
 }
