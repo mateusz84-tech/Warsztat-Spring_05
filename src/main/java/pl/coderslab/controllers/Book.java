@@ -19,6 +19,10 @@ public class Book {
         this.type = type;
     }
 
+    // dodanie konstruktora bezparametrowego
+    public Book() {
+    }
+
     public long getId() {
         return id;
     }
